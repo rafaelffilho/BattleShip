@@ -6,6 +6,17 @@
 
 #include <ctime>
 
+void outline(int x, int y, int size, int rotation, int** matrix){
+    if(rotation == VERTICAL){
+        matrix[x-1][y] = 66;
+        for (int i = y; i < y + size; i++) {
+
+        }
+    } else {
+
+    }
+}
+
 void insNormaShip(int code, int size, int rotation, int** matrix){
     srand(time(NULL));
     int x;
@@ -44,6 +55,8 @@ void create_table(int** matrix){
     for (int i = 0; i < 15; i++)
         for (int q = 0; q < 15; q++)
             matrix[i][q] = 0;
+
+
 
     insNormaShip(1, 3, VERTICAL, matrix);
     insNormaShip(2, 5, HORIZONTAL, matrix);

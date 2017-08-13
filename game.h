@@ -33,7 +33,7 @@ void insNormaShip(int code, int size, int rotation, int** matrix){
                         quit = false;
         } while (!quit);
         for(int i = y; i < y + size; i++){
-            matrix[i][y] = code;
+            matrix[i][x] = code;
         }
     } else {
         do {
@@ -46,9 +46,10 @@ void insNormaShip(int code, int size, int rotation, int** matrix){
                     quit = false;
         } while (!quit);
         for(int i = x; i < x + size; i++){
-            matrix[x][i] = code;
+            matrix[y][i] = code;
         }
     }
+    std::cout << "X: " << x << "Y: " << y << std::endl;
 }
 
 void create_table(int** matrix){
@@ -56,12 +57,14 @@ void create_table(int** matrix){
         for (int q = 0; q < 15; q++)
             matrix[i][q] = 0;
 
-
-
-    insNormaShip(1, 3, VERTICAL, matrix);
+<<<<<<< HEAD
+    
     insNormaShip(2, 5, HORIZONTAL, matrix);
     insNormaShip(3, 2, VERTICAL, matrix);
     insNormaShip(4, 4, VERTICAL, matrix);
+=======
+    insNormaShip(1, 3, HORIZONTAL, matrix);
+>>>>>>> master
 }
 
 #endif

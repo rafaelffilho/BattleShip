@@ -57,6 +57,8 @@ int main() {
                 SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xff);
                 if (matrix[i][j] != 0)
                     SDL_SetRenderDrawColor(renderer, 0x00, 0xff, 0x00, 0xff);
+                if (matrix[i][j] == 66)
+                    SDL_SetRenderDrawColor(renderer, 0x00, 0xff, 0xff, 0xff);
                 SDL_RenderFillRect(renderer, &rects[i][j]);
             }
         }
@@ -69,6 +71,10 @@ int main() {
         SDL_SetRenderDrawColor(renderer, 0x56, 0x87, 0xa4, 0xff);
         SDL_RenderPresent(renderer);
     }
+
+    for (int i = 0; i < 15; ++i)
+        delete [] matrix[i];
+    delete [] matrix;
 
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);

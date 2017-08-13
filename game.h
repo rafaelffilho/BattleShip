@@ -57,14 +57,10 @@ void create_table(int** matrix){
         for (int q = 0; q < 15; q++)
             matrix[i][q] = 0;
 
-<<<<<<< HEAD
-    
+    insNormaShip(1, 3, HORIZONTAL, matrix);
     insNormaShip(2, 5, HORIZONTAL, matrix);
     insNormaShip(3, 2, VERTICAL, matrix);
     insNormaShip(4, 4, VERTICAL, matrix);
-=======
-    insNormaShip(1, 3, HORIZONTAL, matrix);
->>>>>>> master
 }
 
 #endif

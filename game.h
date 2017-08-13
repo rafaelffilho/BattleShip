@@ -8,18 +8,18 @@
 
 void outline(int x, int y, int size, int rotation, int** matrix){
     if(rotation == VERTICAL){
-        matrix[y-1][x] = 66;
-        matrix[y+size][x] = 66;
+        if (y-1    >= 0 ) matrix[y-1][x] = 66;
+        if (y+size <= 14) matrix[y+size][x] = 66;
         for (int i = y; i < y + size; i++) {
-            matrix[i][x+1] = 66;
-            matrix[i][x-1] = 66;
+            if (x+1 <= 14) matrix[i][x+1] = 66;
+            if (x-1 >= 0 ) matrix[i][x-1] = 66;
         }
     } else {
-        matrix[y][x-1] = 66;
-        matrix[y][x+size] = 66;
+        if (x-1    >= 0 ) matrix[y][x-1] = 66;
+        if (x+size <= 14) matrix[y][x+size] = 66;
         for (int i = x; i < x + size; i++) {
-            matrix[y+1][i] = 66;
-            matrix[y-1][i] = 66;
+            if (y+1 <= 14) matrix[y+1][i] = 66;
+            if (y-1 >= 0 ) matrix[y-1][i] = 66;
         }
     }
 }
@@ -65,8 +65,9 @@ void create_table(int** matrix){
         for (int q = 0; q < 15; q++)
             matrix[i][q] = 0;
 
-    insNormaShip(1, 3, HORIZONTAL, matrix);
-    insNormaShip(1, 3, VERTICAL, matrix);
+    srand(time(NULL));
+    insNormaShip(1, 3, rand()%2, matrix);
+    insNormaShip(1, 3, rand()%2, matrix);
 }
 
 #endif
